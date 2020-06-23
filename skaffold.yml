@@ -1,0 +1,16 @@
+apiVersion: skaffold/v2alpha1
+kind: Config
+build:
+  artifacts:
+    - image: hello-world-react
+      context: ./front
+    - image: hello-world-node
+      context: ./back
+deploy:
+  helm:
+    releases:
+      - name: realworld
+        chartPath: ./conduit
+        values:
+          front.image: hello-world-react
+          back.image: hello-world-node

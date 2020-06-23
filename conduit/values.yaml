@@ -1,0 +1,5 @@
+backend_api: "http://localhost:3000/api"
+front:
+  image: localhost/hello-world-react:latest
+back:
+  image: localhost/hello-world-node:latest

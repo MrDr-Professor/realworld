@@ -1,0 +1,1 @@
+{"builds":[{"imageName":"hello-world-react","tag":"hello-world-react:cdf7c9f0f22628c34af4f49c132cfc922a1f8f6f74d47d8b5e17bb3e2d4d9262"},{"imageName":"hello-world-node","tag":"hello-world-node:93ebd339a8835b6c58e9814ec61ebdfa0b2cdad704e511439f45bedcce8c6569"}]}
