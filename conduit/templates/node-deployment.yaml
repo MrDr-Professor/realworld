@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - image: {{ .Values.back.image }}
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         name: node
         ports:
         - containerPort: 3000

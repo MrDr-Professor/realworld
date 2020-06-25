@@ -2,15 +2,16 @@ apiVersion: skaffold/v2alpha1
 kind: Config
 build:
   artifacts:
-    - image: hello-world-react
+    - image: 774051255656.dkr.ecr.us-east-1.amazonaws.com/dob/front
       context: ./front
-    - image: hello-world-node
+    - image: 774051255656.dkr.ecr.us-east-1.amazonaws.com/dob/back
       context: ./back
 deploy:
   helm:
     releases:
       - name: realworld
+        namespace: dob-realworld
         chartPath: ./conduit
         values:
-          front.image: hello-world-react
-          back.image: hello-world-node
+          front.image: 774051255656.dkr.ecr.us-east-1.amazonaws.com/dob/front
+          back.image: 774051255656.dkr.ecr.us-east-1.amazonaws.com/dob/back

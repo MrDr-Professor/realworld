@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - image: {{ .Values.front.image }}
-        imagePullPolicy: Never
+        imagePullPolicy: IfNotPresent
         name: react
         ports:
         - containerPort: 4100
