@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    description: Ingress for operator-slack
+    kubernetes.io/ingress.class: toolchain-nginx
+  labels:
+    app.kubernetes.io/component: bootcamp-demo
+    app.kubernetes.io/instance: bootcamp-demo-instance
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: bootcamp-demo
+    helm.sh/chart: operator-toolchain-v2.0.6-53-gb1ec94e
+  name: bootcamp-demo
+spec:
+  rules:
+  - host: bootcamp-demo.toolchain.lead.sandbox.liatr.io
+    http:
+      paths:
+      - backend:
+          serviceName: react
+          servicePort: 5000
+      - backend:
+          serviceName: node
+          servicePort: 3000
+        path: /api/
+  tls:
+  - hosts:
+    - operator-slack.toolchain.lead.sandbox.liatr.io

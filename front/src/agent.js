@@ -3,6 +3,7 @@ import _superagent from 'superagent';
 
 const superagent = superagentPromise(_superagent, global.Promise);
 
+console.log(process.env);
 const API_ROOT = process.env.REACT_APP_API || 'http://localhost:3000/api';
 
 const encode = encodeURIComponent;

@@ -26,7 +26,4 @@ spec:
         name: react
         ports:
         - containerPort: 4100
-        env:
-        - name: REACT_APP_API
-          value: {{ .Values.backend_api }}
       restartPolicy: Always
