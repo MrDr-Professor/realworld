@@ -1,12 +1,19 @@
-FROM node:14
+FROM node:14 AS build
 
 WORKDIR /usr/src/app
 
 COPY package*.json ./
-RUN npm install --production
+RUN npm install
 COPY ./src ./src
 COPY ./public ./public
 
-EXPOSE 8080
+RUN npm run build
 
-CMD [ "npm", "start" ]
+FROM node:14
+
+RUN npm -g install serve
+COPY --from=build /usr/src/app/build /build
+
+EXPOSE 5000
+
+CMD [ "serve", "-s", "build" ]
