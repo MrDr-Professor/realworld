@@ -8,7 +8,7 @@ build:
       context: ./front
       docker:
         buildArgs:
-          app_api: https://bootcamp-demo.toolchain.lead.sandbox.liatr.io:3000/api
+          app_api: https://bootcamp-demo.toolchain.lead.sandbox.liatr.io/api
     - image: 774051255656.dkr.ecr.us-east-1.amazonaws.com/dob/back
       context: ./back
 deploy:
