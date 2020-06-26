@@ -4,7 +4,10 @@ WORKDIR /usr/src/app
 COPY package.json ./
 COPY yarn.lock .
 RUN yarn install --production
-COPY app.js ./config ./models ./routes ./
+COPY app.js .
+COPY ./config ./config
+COPY ./models ./models
+COPY ./routes ./routes
 
 EXPOSE 3000
 

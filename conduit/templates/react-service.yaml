@@ -9,8 +9,8 @@ metadata:
   name: react
 spec:
   ports:
-  - name: "80"
-    port: 80
-    targetPort: 4100
+  - name: "5000"
+    port: 5000
+    targetPort: 5000
   selector:
     io.kompose.service: react
